@@ -11,7 +11,12 @@ FROM nvcr.io/nvidia/pytorch:20.12-py3
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install imageio-ffmpeg==0.4.3 pyspng==0.1.0
+RUN pip install --use-feature=2020-resolver imageio-ffmpeg==0.4.3 \
+	pyspng==0.1.0 \
+	torch==1.7.1+cu110 \
+	torchvision==0.8.2+cu110 \
+	torchaudio==0.7.2 \
+	-f https://download.pytorch.org/whl/torch_stable.html
 
 WORKDIR /workspace
 
