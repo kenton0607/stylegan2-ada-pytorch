@@ -1,5 +1,5 @@
 build:
-	docker build -t stylegan2-ada .
+	docker build -t sg2ada:latest .
 
 run:
 	docker run -it --rm \
